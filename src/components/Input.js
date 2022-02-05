@@ -3,22 +3,22 @@ import styled from "styled-components";
 
 const Input = () => {
     const [state, setState] = useState({
-        num1: Math.ceil(Math.random() * 10),
+        num1: Math.ceil(Math.random() * 20),
         num2: Math.ceil(Math.random() * 40),
         response: "",
         score: 0,
         message: "",
     });
 
-    const inputKeyPress = (event) => {
-        if (event.key === "Enter") {
+    const inputKeyPress = (e) => {
+        if (e.key === "Enter") {
             const answer = parseInt(state.response)
             console.log(answer);
             if (state.num1 + state.num2 === answer) {
                 setState({
                     ...state,
-                    num1: Math.ceil(Math.random() * 10),
-                    num2: Math.ceil(Math.random() * 30),
+                    num1: Math.ceil(Math.random() * 20),
+                    num2: Math.ceil(Math.random() * 50),
                     response: "",
                     score: state.score + 1,
                     message: "Correct!",
